@@ -50,12 +50,12 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -e ".[train]"
+          pip install -e ".[train,dev]"
 
       - name: Train a small model on synthetic data
         run: |
           pytest tests/test_features.py -q
 
-      - name: Verify API starts without a model file
+      - name: Verify the API imports without training dependencies missing
         run: |
-          python -c "from house_price.serving.api import app; print(len(app.routes))"
+          python -c "import sys; from house_price.serving.api import app; print(len(app.routes))"
