@@ -184,6 +184,14 @@ HTML 报告示例：`reports/drift_report.html`（真实回放）、`reports/dri
 
 ## 快速开始
 
+### 环境要求
+
+- Python **3.10+**（开发与验证使用 3.10.10）
+- 约 2 GB 磁盘（依赖；Docker 镜像另需约 2.5 GB）
+- 首次执行 `hpp prepare` 需要联网访问 OpenML（约 2 MB）
+
+### 1. 安装
+
 ```bash
 python -m venv .venv
 # Windows
@@ -191,40 +199,75 @@ python -m venv .venv
 # macOS / Linux
 source .venv/bin/activate
 
-pip install -e ".[train,dev]"
-
-hpp prepare      # 下载 OpenML 数据 → 校验 → 分层切分
-hpp train        # Optuna 调参 + 5 模型对比 + MLflow 记录 + 保存最优 Pipeline
-hpp evaluate     # 测试指标、分组误差、SHAP、置换重要性
-hpp ablation     # 特征工程消融实验
-hpp serve        # 启动 FastAPI
-hpp drift        # 基于预测日志计算数据漂移
+pip install -e ".[train,dev]"   # 只运行服务可改为 pip install -e .
 ```
 
-也可以一键执行 `hpp all`。完整训练约 25 分钟（单机 CPU），只想快速验证可用
-`hpp train --models lightgbm --trials 2`。
+### 2. 直接运行（仓库已附带训练好的模型，无需重新训练）
 
-### 目录结构
+```bash
+hpp serve          # http://127.0.0.1:8000/docs
+```
+
+克隆后即可加载 `models/house_price_pipeline.joblib` 提供预测；`hpp drift` 也能直接用
+仓库里的参考分布计算漂移。
+
+### 3. 完整复现
+
+```bash
+hpp prepare      # 下载 OpenML 数据 → 校验 → 分层切分        ~30 秒（联网）
+hpp train        # Optuna 调参 + 5 模型对比 + MLflow + 落盘   约 25 分钟（单机 CPU）
+hpp evaluate     # 测试指标、分组误差、SHAP、置换重要性       约 1 分钟
+hpp ablation     # 特征工程消融实验                         约 1 分钟
+hpp drift        # 基于预测日志计算数据漂移                  秒级
+```
+
+也可以一键执行 `hpp all`。只想快速验证训练链路可用
+`hpp train --models lightgbm --trials 2`（约 30 秒）。
+
+### 目录结构与模块职责
 
 ```text
 house-price-mlops/
-├── configs/                 # 数据、训练、服务配置（YAML）
-├── src/house_price/
-│   ├── data/                # ingest · validate · schema
-│   ├── features/            # 自定义 Transformer · Pipeline · 消融
-│   ├── models/              # 调参 · 对比 · 注册 · 训练
-│   ├── evaluation/          # 指标 · 误差分析 · SHAP · EDA
-│   ├── monitoring/          # PSI 漂移 · 预测日志
-│   ├── serving/             # Pydantic Schema · Predictor · FastAPI
-│   └── cli.py               # hpp 命令行
-├── tests/                   # 单元 / 集成 / API 测试
-├── scripts/                 # 漂移定时任务 · HF Spaces 部署
-├── reports/                 # 实验指标、图表、漂移报告
-├── models/                  # 最优 Pipeline 与元数据
-├── Dockerfile
-├── Makefile
-└── pyproject.toml
+├── configs/                 # YAML 配置：数据路径、切分、调参、服务
+├── src/house_price/         # 可安装的 Python 包（src layout）
+│   ├── data/                # 摄取、schema、数据校验
+│   ├── features/            # 自定义 Transformer、Pipeline、消融
+│   ├── models/              # 模型工厂、调参、对比、注册、训练
+│   ├── evaluation/          # 指标、误差分析、SHAP、EDA、报告
+│   ├── monitoring/          # PSI/KS 漂移、SQLite 预测日志
+│   ├── serving/             # Pydantic Schema、Predictor、FastAPI
+│   ├── config.py            # 配置加载与路径解析
+│   ├── logging_utils.py     # 结构化 JSON 日志
+│   └── cli.py               # `hpp` 命令行入口
+├── tests/                   # 单元 / 集成 / API 测试（60 个）
+├── scripts/                 # 漂移定时任务、Space 部署脚本
+├── reports/                 # 实验指标、图表、漂移报告（可复现）
+├── models/                  # 最优 Pipeline + 元数据（随仓库提供）
+├── data/reference/          # 训练分布快照（漂移检测基线）
+├── Dockerfile / Makefile / pyproject.toml / constraints.txt
 ```
+
+| 模块 | 职责 | 关键文件 |
+|---|---|---|
+| `data` | 下载/缓存数据、schema 定义、业务规则校验、分层切分 | `ingest.py` `validate.py` `schema.py` |
+| `features` | 14 个领域特征、有序映射、折外目标编码、列变换组装 | `transformers.py` `pipeline.py` |
+| `models` | 估计器工厂、Optuna 搜索、交叉验证、MLflow 注册 | `factory.py` `tune.py` `compare.py` |
+| `evaluation` | 指标、分价位/分社区误差、SHAP、置换重要性、EDA | `metrics.py` `explain.py` `report.py` |
+| `monitoring` | PSI/KS 漂移检测、参考分布、预测日志 | `drift.py` `prediction_log.py` |
+| `serving` | 启动加载模型、请求校验、批量推理、指标与日志 | `api.py` `predictor.py` `schemas.py` |
+
+### 仓库内容说明
+
+| 随仓库提供 | 不提供（由命令生成或个人文件） |
+|---|---|
+| 全部源码、测试、配置、文档 | `.venv` 虚拟环境 |
+| 训练好的 CatBoost Pipeline（0.9 MB）与元数据 | `data/raw`、`data/processed`（`hpp prepare` 生成） |
+| 训练分布快照（漂移基线） | `mlruns/`、`mlflow.db`（`hpp train` 生成） |
+| 实验结果、SHAP 图、漂移报告 | `data/predictions.db`（服务运行时生成） |
+| Dockerfile、CI 配置 | 个人简历等私有文件 |
+
+因此，**克隆后无需训练即可启动服务**；只有需要重新训练或复现实验时才执行 `hpp prepare && hpp train`。
+所有随机种子、数据切分和超参数都在 `configs/` 与代码中固定，重复执行结果一致。
 
 ---
 
