@@ -264,7 +264,7 @@ house-price-mlops/
 | 训练好的 CatBoost Pipeline（0.9 MB）与元数据 | `data/raw`、`data/processed`（`hpp prepare` 生成） |
 | 训练分布快照（漂移基线） | `mlruns/`、`mlflow.db`（`hpp train` 生成） |
 | 实验结果、SHAP 图、漂移报告 | `data/predictions.db`（服务运行时生成） |
-| Dockerfile、CI 配置 | 个人简历等私有文件 |
+| Dockerfile、CI 配置 | 私有文件 |
 
 因此，**克隆后无需训练即可启动服务**；只有需要重新训练或复现实验时才执行 `hpp prepare && hpp train`。
 所有随机种子、数据切分和超参数都在 `configs/` 与代码中固定，重复执行结果一致。
@@ -331,15 +331,6 @@ Hugging Face 自 2026 年 7 月起要求新建 Docker / Gradio Space 使用 PRO 
 | `reports/drift_report.json` / `.html` | 线上请求漂移报告 |
 | `reports/drift_demo.html` | 注入漂移后的检测示例 |
 | `models/model_metadata.json` | 模型版本、参数、指标、依赖版本 |
-
----
-
-## 设计取舍
-
-- **不引入 Kubernetes / Kafka / Spark**：当前数据规模与团队场景用不上，写了也无法在面试中讲透，属于负收益的复杂度
-- **不做自动重训**：只实现"检测 + 告警 + 手动触发"的闭环，自动重训需要标签回流与审批流程，超出项目边界
-- **选型只看交叉验证**：测试集指标仅用于报告。虽然 LightGBM 的留出集表现更好，但按规则部署 CV 胜出的 CatBoost，避免"用测试集挑模型"的方法论错误
-- **Pipeline 落盘而非裸模型**：保证推理时的预处理与训练完全一致，这是复现性的关键
 
 ---
 
