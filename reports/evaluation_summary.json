@@ -1,0 +1,59 @@
+{
+  "metrics": {
+    "mae": 14451.55,
+    "rmse": 23799.69,
+    "r2": 0.8735,
+    "mape": 0.0932,
+    "median_ae": 9934.27,
+    "model": "catboost",
+    "cv_rmse_log": 0.11773,
+    "n_test": 292
+  },
+  "price_bands": [
+    {
+      "price_band": "Q1",
+      "price_min": 37900.0,
+      "price_max": 128500.0,
+      "n": 75,
+      "mae": 12267.84,
+      "rmse": 19028.88,
+      "mape": 0.1477,
+      "bias": -7247.47
+    },
+    {
+      "price_band": "Q2",
+      "price_min": 129500.0,
+      "price_max": 161500.0,
+      "n": 71,
+      "mae": 11627.17,
+      "rmse": 28779.31,
+      "mape": 0.0782,
+      "bias": -4323.47
+    },
+    {
+      "price_band": "Q3",
+      "price_min": 162000.0,
+      "price_max": 212900.0,
+      "n": 73,
+      "mae": 13394.15,
+      "rmse": 17779.43,
+      "mape": 0.0722,
+      "bias": 1361.69
+    },
+    {
+      "price_band": "Q4",
+      "price_min": 215000.0,
+      "price_max": 538000.0,
+      "n": 73,
+      "mae": 20499.5,
+      "rmse": 27785.19,
+      "mape": 0.0728,
+      "bias": -910.58
+    }
+  ],
+  "shap_figures": {
+    "shap_summary": "D:\\GraduateFiles\\\u5de5\u4f5c\\01-\u535a\u58eb\u7533\u8bf7\\house-price-mlops-pipeline-main\\reports\\figures\\shap_summary.png",
+    "shap_importance": "D:\\GraduateFiles\\\u5de5\u4f5c\\01-\u535a\u58eb\u7533\u8bf7\\house-price-mlops-pipeline-main\\reports\\figures\\shap_importance.png",
+    "shap_waterfall": "D:\\GraduateFiles\\\u5de5\u4f5c\\01-\u535a\u58eb\u7533\u8bf7\\house-price-mlops-pipeline-main\\reports\\figures\\shap_waterfall.png"
+  }
+}

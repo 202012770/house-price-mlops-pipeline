@@ -1,0 +1,48 @@
+dataset:
+  name: house_prices
+  openml_name: house_prices
+  version: 1
+  target: SalePrice
+  id_column: Id
+
+split:
+  test_size: 0.2
+  random_state: 42
+
+paths:
+  raw: data/raw/house_prices.csv
+  cache: data/cache
+  processed_dir: data/processed
+  reference_dir: data/reference
+  models_dir: models
+  reports_dir: reports
+  model_file: models/house_price_pipeline.joblib
+  metadata_file: models/model_metadata.json
+  reference_stats_file: data/reference/reference_stats.json
+  metrics_file: reports/metrics.json
+  comparison_file: reports/model_comparison.csv
+  ablation_file: reports/ablation.csv
+
+features:
+  target_transform: log1p
+  ordinal_mapping:
+    ExterQual: {Po: 1, Fa: 2, TA: 3, Gd: 4, Ex: 5}
+    ExterCond: {Po: 1, Fa: 2, TA: 3, Gd: 4, Ex: 5}
+    BsmtQual: {Po: 1, Fa: 2, TA: 3, Gd: 4, Ex: 5}
+    BsmtCond: {Po: 1, Fa: 2, TA: 3, Gd: 4, Ex: 5}
+    HeatingQC: {Po: 1, Fa: 2, TA: 3, Gd: 4, Ex: 5}
+    KitchenQual: {Po: 1, Fa: 2, TA: 3, Gd: 4, Ex: 5}
+    FireplaceQu: {Po: 1, Fa: 2, TA: 3, Gd: 4, Ex: 5}
+    GarageQual: {Po: 1, Fa: 2, TA: 3, Gd: 4, Ex: 5}
+    GarageCond: {Po: 1, Fa: 2, TA: 3, Gd: 4, Ex: 5}
+    PoolQC: {Po: 1, Fa: 2, TA: 3, Gd: 4, Ex: 5}
+    BsmtExposure: {No: 0, Mn: 1, Av: 2, Gd: 3}
+    BsmtFinType1: {Unf: 0, LwQ: 1, Rec: 2, BLQ: 3, ALQ: 4, GLQ: 5}
+    BsmtFinType2: {Unf: 0, LwQ: 1, Rec: 2, BLQ: 3, ALQ: 4, GLQ: 5}
+    Functional: {Sal: 0, Sev: 1, Maj2: 2, Maj1: 3, Mod: 4, Min2: 5, Min1: 6, Typ: 7}
+    GarageFinish: {Unf: 1, RFn: 2, Fin: 3}
+    CentralAir: {N: 0, Y: 1}
+    Street: {Grvl: 0, Pave: 1}
+    PavedDrive: {N: 0, P: 1, Y: 2}
+  target_encoding_smoothing: 10.0
+  prediction_clip_quantiles: [0.005, 0.995]

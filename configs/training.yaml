@@ -1,0 +1,38 @@
+cv:
+  n_splits: 5
+  shuffle: true
+  random_state: 42
+
+tuning:
+  n_trials: 20
+  timeout_seconds: 900
+  direction: minimize
+  metric: rmse
+
+mlflow:
+  experiment: house-price-mlops
+  tracking_db: mlflow.db
+  registered_model_name: house-price-predictor
+
+models:
+  ridge:
+    enabled: true
+  random_forest:
+    enabled: true
+    n_estimators_range: [200, 800]
+  xgboost:
+    enabled: true
+    n_estimators_range: [200, 1200]
+  lightgbm:
+    enabled: true
+    n_estimators_range: [200, 1200]
+  catboost:
+    enabled: true
+    n_estimators_range: [200, 1000]
+
+serving:
+  batch_limit: 1000
+  prediction_log_db: data/predictions.db
+  drift_thresholds:
+    psi_stable: 0.1
+    psi_moderate: 0.25

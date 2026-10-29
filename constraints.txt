@@ -1,0 +1,15 @@
+# Versions used to train models/model_metadata.json.
+# Keeping them pinned avoids pickle incompatibilities when rebuilding the image.
+numpy==2.2.6
+pandas==2.3.3
+scipy==1.15.3
+scikit-learn==1.7.2
+lightgbm==4.7.0
+xgboost==3.2.0
+catboost==1.2.10
+pydantic==2.14.1
+fastapi==0.162.0
+uvicorn==0.54.0
+prometheus-client==0.26.0
+PyYAML==6.0.3
+joblib==1.6.0

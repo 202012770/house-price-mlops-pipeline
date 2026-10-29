@@ -1,0 +1,4 @@
+variant,cv_rmse_log,cv_std_log,test_mae,test_rmse,test_r2,n_features,improvement_vs_baseline_pct
+baseline_raw_onehot,0.12786,0.00353,14045.97,22382.85,0.8881,247,0.0
+plus_domain_features,0.12599,0.00557,13796.56,21922.07,0.8926,262,1.46
+plus_target_encoding,0.12429,0.0053,14366.43,21129.23,0.9003,209,2.79

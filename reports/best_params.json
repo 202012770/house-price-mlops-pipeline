@@ -1,0 +1,11 @@
+{
+  "model": "catboost",
+  "params": {
+    "iterations": 800,
+    "learning_rate": 0.03330082953524267,
+    "depth": 6,
+    "l2_leaf_reg": 4.617763713095872,
+    "random_strength": 0.898753517133372
+  },
+  "cv_rmse_log": 0.1177337637218264
+}

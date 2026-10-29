@@ -1,0 +1,33 @@
+{
+  "status": "ok",
+  "rows": 1460,
+  "columns": 81,
+  "duplicate_ids": 0,
+  "range_violations": {},
+  "unknown_categories": {},
+  "missing_ratio_top15": {
+    "PoolQC": 0.9952,
+    "MiscFeature": 0.963,
+    "Alley": 0.9377,
+    "Fence": 0.8075,
+    "MasVnrType": 0.5973,
+    "FireplaceQu": 0.4726,
+    "LotFrontage": 0.1774,
+    "GarageQual": 0.0555,
+    "GarageFinish": 0.0555,
+    "GarageType": 0.0555,
+    "GarageYrBlt": 0.0555,
+    "GarageCond": 0.0555,
+    "BsmtFinType2": 0.026,
+    "BsmtExposure": 0.026,
+    "BsmtCond": 0.0253
+  },
+  "target": {
+    "min": 34900.0,
+    "mean": 180921.19589041095,
+    "max": 755000.0,
+    "median": 163000.0
+  },
+  "issues": [],
+  "checked_at": "2026-10-29T05:47:44.982273+00:00"
+}

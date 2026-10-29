@@ -1,0 +1,58 @@
+{
+  "rows": 1460,
+  "columns": 81,
+  "target": {
+    "mean": 180921.19589041095,
+    "median": 163000.0,
+    "skew": 1.8828757597682129
+  },
+  "target_skew_after_log": 0.12134661989685333,
+  "top_correlations": {
+    "OverallQual": 0.791,
+    "GrLivArea": 0.7086,
+    "GarageCars": 0.6404,
+    "GarageArea": 0.6234,
+    "TotalBsmtSF": 0.6136,
+    "1stFlrSF": 0.6059,
+    "FullBath": 0.5607,
+    "TotRmsAbvGrd": 0.5337,
+    "YearBuilt": 0.5229,
+    "YearRemodAdd": 0.5071
+  },
+  "missing_columns_gt_10pct": {
+    "LotFrontage": 0.1774,
+    "Alley": 0.9377,
+    "MasVnrType": 0.5973,
+    "FireplaceQu": 0.4726,
+    "PoolQC": 0.9952,
+    "Fence": 0.8075,
+    "MiscFeature": 0.963
+  },
+  "neighborhood_median_price": {
+    "MeadowV": 88000.0,
+    "IDOTRR": 103000.0,
+    "BrDale": 106000.0,
+    "OldTown": 119000.0,
+    "Edwards": 121750.0,
+    "BrkSide": 124300.0,
+    "Sawyer": 135000.0,
+    "Blueste": 137500.0,
+    "SWISU": 139500.0,
+    "NAmes": 140000.0,
+    "NPkVill": 146000.0,
+    "Mitchel": 153500.0,
+    "SawyerW": 179900.0,
+    "Gilbert": 181000.0,
+    "NWAmes": 182900.0,
+    "Blmngtn": 191000.0,
+    "CollgCr": 197200.0,
+    "ClearCr": 200250.0,
+    "Crawfor": 200624.0,
+    "Veenker": 218000.0,
+    "Somerst": 225500.0,
+    "Timber": 228475.0,
+    "StoneBr": 278000.0,
+    "NoRidge": 301500.0,
+    "NridgHt": 315000.0
+  }
+}

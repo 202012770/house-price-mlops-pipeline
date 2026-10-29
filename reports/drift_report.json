@@ -1,0 +1,631 @@
+{
+  "status": "moderate",
+  "max_psi": 0.119,
+  "n_checked": 77,
+  "n_drifted": 0,
+  "n_moderate": 1,
+  "drifted_features": [],
+  "features": {
+    "Neighborhood": {
+      "type": "categorical",
+      "psi": 0.119,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 1.0
+    },
+    "YearRemodAdd": {
+      "type": "numeric",
+      "psi": 0.0705,
+      "ks_statistic": 0.0668,
+      "ks_pvalue": 0.8229,
+      "current_mean": 1983.7689,
+      "reference_mean": 1984.9675,
+      "provided_ratio": 1.0
+    },
+    "GarageYrBlt": {
+      "type": "numeric",
+      "psi": 0.0692,
+      "ks_statistic": 0.0511,
+      "ks_pvalue": 0.9763,
+      "current_mean": 1978.5194,
+      "reference_mean": 1978.3873,
+      "provided_ratio": 0.813
+    },
+    "LotArea": {
+      "type": "numeric",
+      "psi": 0.0647,
+      "ks_statistic": 0.0882,
+      "ks_pvalue": 0.5034,
+      "current_mean": 10349.5756,
+      "reference_mean": 10485.7911,
+      "provided_ratio": 1.0
+    },
+    "BsmtUnfSF": {
+      "type": "numeric",
+      "psi": 0.058,
+      "ks_statistic": 0.0629,
+      "ks_pvalue": 0.8813,
+      "current_mean": 538.4005,
+      "reference_mean": 574.292,
+      "provided_ratio": 0.8655
+    },
+    "YearBuilt": {
+      "type": "numeric",
+      "psi": 0.0554,
+      "ks_statistic": 0.0632,
+      "ks_pvalue": 0.8687,
+      "current_mean": 1971.8298,
+      "reference_mean": 1971.0051,
+      "provided_ratio": 1.0
+    },
+    "GarageArea": {
+      "type": "numeric",
+      "psi": 0.0538,
+      "ks_statistic": 0.0345,
+      "ks_pvalue": 0.9999,
+      "current_mean": 472.3529,
+      "reference_mean": 472.8373,
+      "provided_ratio": 1.0
+    },
+    "HeatingQC": {
+      "type": "categorical",
+      "psi": 0.0516,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8655
+    },
+    "BsmtFinType1": {
+      "type": "categorical",
+      "psi": 0.0511,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8466
+    },
+    "GrLivArea": {
+      "type": "numeric",
+      "psi": 0.0492,
+      "ks_statistic": 0.0498,
+      "ks_pvalue": 0.9782,
+      "current_mean": 1486.605,
+      "reference_mean": 1516.7269,
+      "provided_ratio": 1.0
+    },
+    "MasVnrType": {
+      "type": "categorical",
+      "psi": 0.044,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.3634
+    },
+    "MSSubClass": {
+      "type": "categorical",
+      "psi": 0.0414,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8697
+    },
+    "FireplaceQu": {
+      "type": "categorical",
+      "psi": 0.0408,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.4811
+    },
+    "1stFlrSF": {
+      "type": "numeric",
+      "psi": 0.0396,
+      "ks_statistic": 0.0707,
+      "ks_pvalue": 0.7671,
+      "current_mean": 1118.5714,
+      "reference_mean": 1167.6096,
+      "provided_ratio": 1.0
+    },
+    "LotShape": {
+      "type": "categorical",
+      "psi": 0.0385,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8655
+    },
+    "HouseStyle": {
+      "type": "categorical",
+      "psi": 0.0365,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8655
+    },
+    "Exterior1st": {
+      "type": "categorical",
+      "psi": 0.0361,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8655
+    },
+    "TotalBsmtSF": {
+      "type": "numeric",
+      "psi": 0.0333,
+      "ks_statistic": 0.0665,
+      "ks_pvalue": 0.8264,
+      "current_mean": 1023.5168,
+      "reference_mean": 1060.762,
+      "provided_ratio": 1.0
+    },
+    "LotFrontage": {
+      "type": "numeric",
+      "psi": 0.0326,
+      "ks_statistic": 0.0602,
+      "ks_pvalue": 0.9196,
+      "current_mean": 67.3878,
+      "reference_mean": 70.4535,
+      "provided_ratio": 0.7206
+    },
+    "MoSold": {
+      "type": "numeric",
+      "psi": 0.0325,
+      "ks_statistic": 0.084,
+      "ks_pvalue": 0.5818,
+      "current_mean": 6.6942,
+      "reference_mean": 6.2372,
+      "provided_ratio": 0.8655
+    },
+    "YrSold": {
+      "type": "numeric",
+      "psi": 0.0316,
+      "ks_statistic": 0.0609,
+      "ks_pvalue": 0.9021,
+      "current_mean": 2007.7209,
+      "reference_mean": 2007.8433,
+      "provided_ratio": 0.8655
+    },
+    "Exterior2nd": {
+      "type": "categorical",
+      "psi": 0.0313,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8655
+    },
+    "Fence": {
+      "type": "categorical",
+      "psi": 0.0303,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.1534
+    },
+    "Electrical": {
+      "type": "categorical",
+      "psi": 0.0293,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8655
+    },
+    "BsmtFinType2": {
+      "type": "categorical",
+      "psi": 0.0286,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8466
+    },
+    "SaleCondition": {
+      "type": "categorical",
+      "psi": 0.0286,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8655
+    },
+    "Functional": {
+      "type": "categorical",
+      "psi": 0.0249,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8655
+    },
+    "BsmtFinSF1": {
+      "type": "numeric",
+      "psi": 0.022,
+      "ks_statistic": 0.0451,
+      "ks_pvalue": 0.9935,
+      "current_mean": 447.5534,
+      "reference_mean": 437.226,
+      "provided_ratio": 0.8655
+    },
+    "FullBath": {
+      "type": "numeric",
+      "psi": 0.0209,
+      "ks_statistic": 0.0213,
+      "ks_pvalue": 1.0,
+      "current_mean": 1.5609,
+      "reference_mean": 1.5608,
+      "provided_ratio": 1.0
+    },
+    "ExterCond": {
+      "type": "categorical",
+      "psi": 0.0206,
+      "unseen_categories": [
+        "Po"
+      ],
+      "n_unseen": 1,
+      "provided_ratio": 0.8655
+    },
+    "SaleType": {
+      "type": "categorical",
+      "psi": 0.0203,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8655
+    },
+    "ExterQual": {
+      "type": "categorical",
+      "psi": 0.0202,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8655
+    },
+    "BsmtCond": {
+      "type": "categorical",
+      "psi": 0.0185,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8466
+    },
+    "BsmtQual": {
+      "type": "categorical",
+      "psi": 0.0179,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8466
+    },
+    "BsmtExposure": {
+      "type": "categorical",
+      "psi": 0.0175,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8424
+    },
+    "2ndFlrSF": {
+      "type": "numeric",
+      "psi": 0.0173,
+      "ks_statistic": 0.052,
+      "ks_pvalue": 0.9673,
+      "current_mean": 364.9811,
+      "reference_mean": 342.7474,
+      "provided_ratio": 1.0
+    },
+    "PavedDrive": {
+      "type": "categorical",
+      "psi": 0.017,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8655
+    },
+    "GarageCond": {
+      "type": "categorical",
+      "psi": 0.0166,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.813
+    },
+    "OpenPorchSF": {
+      "type": "numeric",
+      "psi": 0.016,
+      "ks_statistic": 0.0564,
+      "ks_pvalue": 0.9432,
+      "current_mean": 45.75,
+      "reference_mean": 47.3014,
+      "provided_ratio": 0.8655
+    },
+    "OverallQual": {
+      "type": "numeric",
+      "psi": 0.0155,
+      "ks_statistic": 0.0333,
+      "ks_pvalue": 0.9999,
+      "current_mean": 6.0966,
+      "reference_mean": 6.0933,
+      "provided_ratio": 1.0
+    },
+    "TotRmsAbvGrd": {
+      "type": "numeric",
+      "psi": 0.0121,
+      "ks_statistic": 0.0431,
+      "ks_pvalue": 0.9957,
+      "current_mean": 6.4538,
+      "reference_mean": 6.5291,
+      "provided_ratio": 1.0
+    },
+    "GarageQual": {
+      "type": "categorical",
+      "psi": 0.0113,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.813
+    },
+    "WoodDeckSF": {
+      "type": "numeric",
+      "psi": 0.0111,
+      "ks_statistic": 0.0783,
+      "ks_pvalue": 0.6672,
+      "current_mean": 104.1481,
+      "reference_mean": 91.1926,
+      "provided_ratio": 0.8655
+    },
+    "EnclosedPorch": {
+      "type": "numeric",
+      "psi": 0.0109,
+      "ks_statistic": 0.0468,
+      "ks_pvalue": 0.9899,
+      "current_mean": 18.6019,
+      "reference_mean": 22.8861,
+      "provided_ratio": 0.8655
+    },
+    "CentralAir": {
+      "type": "categorical",
+      "psi": 0.0107,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8655
+    },
+    "OverallCond": {
+      "type": "numeric",
+      "psi": 0.01,
+      "ks_statistic": 0.0309,
+      "ks_pvalue": 1.0,
+      "current_mean": 5.5607,
+      "reference_mean": 5.5839,
+      "provided_ratio": 0.8655
+    },
+    "KitchenQual": {
+      "type": "categorical",
+      "psi": 0.0089,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8655
+    },
+    "Condition1": {
+      "type": "categorical",
+      "psi": 0.0082,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8655
+    },
+    "BldgType": {
+      "type": "categorical",
+      "psi": 0.0082,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8655
+    },
+    "LandContour": {
+      "type": "categorical",
+      "psi": 0.0079,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8655
+    },
+    "RoofStyle": {
+      "type": "categorical",
+      "psi": 0.0075,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8655
+    },
+    "LotConfig": {
+      "type": "categorical",
+      "psi": 0.0072,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8655
+    },
+    "GarageCars": {
+      "type": "numeric",
+      "psi": 0.007,
+      "ks_statistic": 0.0273,
+      "ks_pvalue": 1.0,
+      "current_mean": 1.7416,
+      "reference_mean": 1.774,
+      "provided_ratio": 1.0
+    },
+    "BedroomAbvGr": {
+      "type": "numeric",
+      "psi": 0.0068,
+      "ks_statistic": 0.0252,
+      "ks_pvalue": 1.0,
+      "current_mean": 2.8908,
+      "reference_mean": 2.8613,
+      "provided_ratio": 0.8655
+    },
+    "MSZoning": {
+      "type": "categorical",
+      "psi": 0.0068,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 1.0
+    },
+    "MasVnrArea": {
+      "type": "numeric",
+      "psi": 0.0062,
+      "ks_statistic": 0.0346,
+      "ks_pvalue": 0.9999,
+      "current_mean": 105.0146,
+      "reference_mean": 102.8052,
+      "provided_ratio": 0.8655
+    },
+    "Utilities": {
+      "type": "categorical",
+      "psi": 0.0058,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8655
+    },
+    "LandSlope": {
+      "type": "categorical",
+      "psi": 0.0046,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8655
+    },
+    "BsmtFinSF2": {
+      "type": "numeric",
+      "psi": 0.0038,
+      "ks_statistic": 0.031,
+      "ks_pvalue": 1.0,
+      "current_mean": 39.0971,
+      "reference_mean": 49.244,
+      "provided_ratio": 0.8655
+    },
+    "Foundation": {
+      "type": "categorical",
+      "psi": 0.0024,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8655
+    },
+    "BsmtFullBath": {
+      "type": "numeric",
+      "psi": 0.0023,
+      "ks_statistic": 0.0081,
+      "ks_pvalue": 1.0,
+      "current_mean": 0.4248,
+      "reference_mean": 0.4247,
+      "provided_ratio": 0.8655
+    },
+    "GarageType": {
+      "type": "categorical",
+      "psi": 0.0022,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.813
+    },
+    "Fireplaces": {
+      "type": "numeric",
+      "psi": 0.0021,
+      "ks_statistic": 0.0461,
+      "ks_pvalue": 0.9903,
+      "current_mean": 0.6324,
+      "reference_mean": 0.6036,
+      "provided_ratio": 1.0
+    },
+    "Heating": {
+      "type": "categorical",
+      "psi": 0.0019,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8655
+    },
+    "GarageFinish": {
+      "type": "categorical",
+      "psi": 0.0015,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.813
+    },
+    "Condition2": {
+      "type": "categorical",
+      "psi": 0.0007,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8655
+    },
+    "RoofMatl": {
+      "type": "categorical",
+      "psi": 0.0007,
+      "unseen_categories": [
+        "ClyTile",
+        "Metal",
+        "Roll"
+      ],
+      "n_unseen": 3,
+      "provided_ratio": 0.8655
+    },
+    "HalfBath": {
+      "type": "numeric",
+      "psi": 0.0002,
+      "ks_statistic": 0.039,
+      "ks_pvalue": 0.9991,
+      "current_mean": 0.4126,
+      "reference_mean": 0.3767,
+      "provided_ratio": 0.8655
+    },
+    "Street": {
+      "type": "categorical",
+      "psi": 0.0001,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.8655
+    },
+    "Alley": {
+      "type": "categorical",
+      "psi": 0.0001,
+      "unseen_categories": [],
+      "n_unseen": 0,
+      "provided_ratio": 0.0651
+    },
+    "LowQualFinSF": {
+      "type": "numeric",
+      "psi": 0.0,
+      "ks_statistic": 0.0174,
+      "ks_pvalue": 1.0,
+      "current_mean": 3.5267,
+      "reference_mean": 6.3699,
+      "provided_ratio": 0.8655
+    },
+    "3SsnPorch": {
+      "type": "numeric",
+      "psi": 0.0,
+      "ks_statistic": 0.0198,
+      "ks_pvalue": 1.0,
+      "current_mean": 1.3883,
+      "reference_mean": 3.8836,
+      "provided_ratio": 0.8655
+    },
+    "ScreenPorch": {
+      "type": "numeric",
+      "psi": 0.0,
+      "ks_statistic": 0.0185,
+      "ks_pvalue": 1.0,
+      "current_mean": 14.4272,
+      "reference_mean": 15.4461,
+      "provided_ratio": 0.8655
+    },
+    "PoolArea": {
+      "type": "numeric",
+      "psi": 0.0,
+      "ks_statistic": 0.0099,
+      "ks_pvalue": 1.0,
+      "current_mean": 1.165,
+      "reference_mean": 3.0377,
+      "provided_ratio": 0.8655
+    },
+    "BsmtHalfBath": {
+      "type": "numeric",
+      "psi": 0.0,
+      "ks_statistic": 0.0075,
+      "ks_pvalue": 1.0,
+      "current_mean": 0.0655,
+      "reference_mean": 0.0557,
+      "provided_ratio": 0.8655
+    },
+    "KitchenAbvGr": {
+      "type": "numeric",
+      "psi": 0.0,
+      "ks_statistic": 0.005,
+      "ks_pvalue": 1.0,
+      "current_mean": 1.051,
+      "reference_mean": 1.0462,
+      "provided_ratio": 0.8655
+    },
+    "MiscVal": {
+      "type": "numeric",
+      "psi": 0.0,
+      "ks_statistic": 0.0198,
+      "ks_pvalue": 1.0,
+      "current_mean": 22.1602,
+      "reference_mean": 48.5993,
+      "provided_ratio": 0.8655
+    }
+  },
+  "thresholds": {
+    "stable": 0.1,
+    "moderate": 0.25
+  },
+  "checked_at": "2026-10-29T07:07:46.719405+00:00",
+  "rows": 476
+}

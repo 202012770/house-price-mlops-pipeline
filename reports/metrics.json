@@ -1,0 +1,10 @@
+{
+  "mae": 14451.55,
+  "rmse": 23799.69,
+  "r2": 0.8735,
+  "mape": 0.0932,
+  "median_ae": 9934.27,
+  "model": "catboost",
+  "cv_rmse_log": 0.11773,
+  "n_test": 292
+}
